@@ -12,7 +12,7 @@ const NAV = [
   ['view', '9', 'View & print'],
 ];
 
-export default function Sidebar({ tab, setTab, collapsed, setCollapsed }) {
+export default function Sidebar({ tab, setTab, collapsed, setCollapsed, darkMode, setDarkMode }) {
   return (
     <div className={`sidebar no-print ${collapsed ? 'collapsed' : ''}`}>
       <div className="brand">
@@ -22,6 +22,13 @@ export default function Sidebar({ tab, setTab, collapsed, setCollapsed }) {
           title={collapsed ? 'Expand menu' : 'Collapse menu'}
         >
           {collapsed ? '»' : '«'}
+        </button>
+        <button
+          className="mode-btn"
+          onClick={() => setDarkMode(!darkMode)}
+          title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {darkMode ? '☀' : '🌙'}
         </button>
         {!collapsed && (
           <>

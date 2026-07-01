@@ -29,12 +29,17 @@ export default function App() {
   const [reserved, setReserved] = useState(demo.reserved);
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
   const [tab, setTab] = useState('generate');
   const [result, setResult] = useState(null);
   const [viewMode, setViewMode] = useState('class');
   const [viewClassId, setViewClassId] = useState(demo.classes[0]?.id || '');
   const [viewTeacherId, setViewTeacherId] = useState(demo.teachers[0]?.id || '');
   const [printJob, setPrintJob] = useState(null);
+
+  useEffect(() => {
+    document.body.classList.toggle('dark', darkMode);
+  }, [darkMode]);
 
   useEffect(() => {
     const r = generateTimetable(days, periods, classes, teachers, assignments, reserved);
@@ -124,7 +129,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Sidebar tab={tab} setTab={setTab} collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} />
+      <Sidebar tab={tab} setTab={setTab} collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} darkMode={darkMode} setDarkMode={setDarkMode} />
       <div className="main">
         {tab === 'setup' && (
           <SetupTab
