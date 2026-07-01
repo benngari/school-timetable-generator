@@ -1,4 +1,4 @@
-# Shule Timetable — School Timetable Generator
+# Shule Timetable School Timetable Generator
 
 A React + Vite app for generating clash-free class, teacher, and whole-school
 timetables for Kenyan primary, junior school (JSS), and secondary schools —
