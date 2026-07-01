@@ -10,9 +10,9 @@ with Excel and PDF/print export.
 - Custom **days and period structure** (breaks, lunch, any number of periods)
 - **Classes & streams** (bulk-add e.g. "Form 1" + "S,E,N")
 - **Subjects**, **teachers**, and **assignments** (class + subject → teacher, periods/week)
-- **Double periods** — schedule consecutive back-to-back lessons for PE, science
+- **Double periods**  schedule consecutive back-to-back lessons for PE, science
   practicals, agriculture, etc.
-- **Teacher unavailability** — block specific day/period slots per teacher
+- **Teacher unavailability**  block specific day/period slots per teacher
   (part-time staff, duty periods)
 - **Reserved whole-school activities** — fix a slot (e.g. Games/PE on Wednesday
   afternoon) across all or selected classes, placed before regular lessons so
