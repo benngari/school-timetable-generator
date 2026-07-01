@@ -108,3 +108,13 @@ table.mini th{background:var(--green-light);color:var(--green-dark);padding:4px 
   .print-head h2{font-size:18px;color:#000;}
   .print-head p{font-size:11px;color:#333;margin:2px 0 0;}
 }
+
+/* Collapsible sidebar */
+.sidebar{transition:width .18s ease;}
+.sidebar.collapsed{width:58px;}
+.sidebar .navbtn{white-space:nowrap;overflow:hidden;}
+.sidebar.collapsed .navbtn{justify-content:center;padding:11px 0;}
+.sidebar.collapsed .brand{padding:0 0 12px;text-align:center;border-bottom:none;margin-bottom:2px;}
+.collapse-btn{background:rgba(255,255,255,0.12);border:none;color:#fff;width:24px;height:24px;border-radius:5px;cursor:pointer;font-size:13px;line-height:1;margin-bottom:8px;}
+.collapse-btn:hover{background:rgba(255,255,255,0.22);}
+.sidebar.collapsed .collapse-btn{margin-bottom:0;}
