@@ -28,6 +28,7 @@ export default function App() {
   const [assignments, setAssignments] = useState(demo.assignments);
   const [reserved, setReserved] = useState(demo.reserved);
 
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [tab, setTab] = useState('generate');
   const [result, setResult] = useState(null);
   const [viewMode, setViewMode] = useState('class');
@@ -123,7 +124,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <Sidebar tab={tab} setTab={setTab} />
+      <Sidebar tab={tab} setTab={setTab} collapsed={sidebarCollapsed} setCollapsed={setSidebarCollapsed} />
       <div className="main">
         {tab === 'setup' && (
           <SetupTab

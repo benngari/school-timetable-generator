@@ -12,17 +12,28 @@ const NAV = [
   ['view', '9', 'View & print'],
 ];
 
-export default function Sidebar({ tab, setTab }) {
+export default function Sidebar({ tab, setTab, collapsed, setCollapsed }) {
   return (
-    <div className="sidebar no-print">
+    <div className={`sidebar no-print ${collapsed ? 'collapsed' : ''}`}>
       <div className="brand">
-        <h1>Shule Timetable</h1>
-        <p>Kenya school scheduler</p>
+        <button
+          className="collapse-btn"
+          onClick={() => setCollapsed(!collapsed)}
+          title={collapsed ? 'Expand menu' : 'Collapse menu'}
+        >
+          {collapsed ? '»' : '«'}
+        </button>
+        {!collapsed && (
+          <>
+            <h1>Shule Timetable</h1>
+            <p>Kenya school scheduler</p>
+          </>
+        )}
       </div>
       {NAV.map(([key, num, label]) => (
-        <button key={key} className={`navbtn ${tab === key ? 'active' : ''}`} onClick={() => setTab(key)}>
+        <button key={key} className={`navbtn ${tab === key ? 'active' : ''}`} onClick={() => setTab(key)} title={label}>
           <span className="num">{num}</span>
-          {label}
+          {!collapsed && label}
         </button>
       ))}
     </div>
